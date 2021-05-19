@@ -10,7 +10,7 @@ sample_max = max(sample)
 sample_min = min(sample)
 sample_span = sample_max - sample_min
 sample_mean = sum(sample) / len(sample)
-sample_variance = sum(sample ** 2) / len(sample)
+sample_variance = sum(sample ** 2) / (len(sample) - 1)  # corrected variance
 standard_deviation = sqrt(sample_variance)
 
 empirical_distribution = np.vectorize(lambda x: np.count_nonzero(sample < x) / len(sample))
